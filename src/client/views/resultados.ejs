@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+	<% include ../partials/head %>
+	<% include ../partials/header %>	
+
+	<body>
+		<main style="margin-top: 3%">
+			<div class="row">
+				<div class="col s12 m6 offset-m3">
+					<div class="card">
+						<div class="card-title center">
+							<span><h4>Resultados</h4></span>
+						</div>
+
+						<div class="card-content">
+							<div class="row">
+								<h6 style="text-align: center;"><span><i class="material-icons" style="vertical-align: bottom;">star</i></span> Melhor volta: <%= melhorVolta.tempo %> | Piloto - <%= melhorVolta.nomePiloto %></h6>
+							</div>
+							
+							<!-- Percorre lista de pilotos -->
+							<ul class="collapsible">
+							<% pilotos.forEach(item => { %>
+								<li>
+									<div class="collapsible-header">
+										<i class="material-icons">expand_more</i><b><%= item.posicao %> - </b> <%= item.codPiloto %> - <%= item.nomePiloto %>
+									</div>
+									<div class="collapsible-body">
+										<table class="responsive-table centered" >
+											<thead>
+												<tr>
+													<th>Chegada</th>
+													<th>Voltas</th>
+													<th>Tempo de Prova</th>
+													<th>Melhor Volta</th>
+													<th>Velocidade Média</th>
+													<% if(item.posicao > 1) { %>
+														<th>Distância Primeiro Lugar</th>
+													<% } %>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><%= item.chegada %></td>
+													<td><%= item.voltas %></td>
+													<td><%= item.tempoDeProva %></td>
+													<td><%= item.melhorVolta %></td>
+													<td><%= item.velocidadeMedia %></td>
+													<% if(item.posicao > 1) { %>
+														<td><%= item.diferenca %></td>
+													<% } %>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</li>
+							<% }) %>
+							</ul>
+							<!-- /lista de pilotos -->
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+		</main>
+	</body>
+
+	<%include ../partials/footer %>
+
+</html> 

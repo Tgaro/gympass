@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='pt-BR'>
+	<% include ../partials/head %>
+	<% include ../partials/header %>	
+
+	<body>
+		<main style="margin-top: 3%">
+			<div class="row">
+				<div class="col s12 m6 offset-m3">
+					<div class="card">
+						<div class="card-title center">
+							<span><h4>Faça upload do arquivo de log</h4></span>
+						</div>
+						<form action="resultados" method="post" enctype="multipart/form-data">
+							<div class="card-content">
+								<div class = "file-field input-field">
+									<div class = "btn">
+										<span>Procurar</span>
+										<input type="file" name="filetoupload" accept=".txt, .log"/>
+									</div>
+									<div class = "file-path-wrapper">
+										<input class = "file-path validate" type = "text" placeholder = "Escolha um arquivo" />
+									</div>
+								</div>
+							</div>
+
+							<div class="card-action center">
+								<button class="btn" type="submit">Enviar</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+	
+	<%include ../partials/footer %>
+
+</html>
