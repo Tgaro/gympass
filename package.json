@@ -4,17 +4,21 @@
   "description": "Desafio Gympass",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nyc --reporter=text mocha --exit",
     "start": "nodemon"
   },
   "author": "Tiago Aro",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
     "consign": "^0.1.6",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "formidable": "^1.2.1",
-    "nodemon": "^1.18.9"
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
+    "nyc": "^13.1.0"
   }
 }

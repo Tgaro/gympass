@@ -3,7 +3,7 @@ const patterns = {
 	codPiloto: /(\s\d{3}\s)/g,
 	nomePiloto: /\s[a-zA-Z]\.?[a-zA-Z]*\s/g,
 	volta: /(\s\d\s)/g,
-	tempoVolta: /\s\d\:\d{2}\.\d{3}/g,
+	tempoVolta: /\s\d*\:\d{2}\.\d{3}/g,
 	velocidade: /\s\d*,\d*/g,
 	repl: /\/\t/g
 }
@@ -41,8 +41,8 @@ module.exports = linhas => {
 			codPilotos.push(codPiloto)
 
 			//Salva inofrmações sobre a melhor volta da corrida
-			if(melhorVolta.tempo > tempoVolta){
-
+			if(Date.parse(`01/01/1999 00:${melhorVolta.tempo}`) > Date.parse(`01/01/1999 00:${tempoVolta}`)){
+				
 				melhorVolta.tempo = tempoVolta
 				melhorVolta.codPiloto = codPiloto
 				melhorVolta.nomePiloto = nomePiloto

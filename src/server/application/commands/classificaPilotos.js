@@ -1,10 +1,10 @@
-module.exports = (arr, codPilotos) => {
+module.exports = (tabelaArquivo, listaPilotos) => {
 
 	let pilotos = []
 	//percorre todos os códigos de piloto do arquivo e gera as informações
-	for(let i = 0; i < codPilotos.length; i++){
+	for(let i = 0; i < listaPilotos.length; i++){
 
-		const piloto = arr.filter(item => codPilotos[i] == item.codPiloto)
+		const piloto = tabelaArquivo.filter(item => listaPilotos[i] == item.codPiloto)
 		pilotos.push(geraInfoPiloto(piloto))
 	}
 	//adiciona a posição do piloto e diferença de chegada do primeiro para os demais
@@ -25,9 +25,12 @@ const geraInfoPiloto = piloto => {
 	//percorre linhas do piloto para coletar informações de melhor volta, chegada, etc.
 	for(let i = 0; i < piloto.length; i++){
 
-		if(melhorVolta > piloto[i].tempoVolta)
+		if(Date.parse(`01/01/1999 00:${melhorVolta}`) > Date.parse(`01/01/1999 00:${piloto[i].tempoVolta}`)){
+
 			melhorVolta = piloto[i].tempoVolta
-		if(voltas < piloto[i].volta){
+		}
+
+		if(voltas < parseInt(piloto[i].volta)){
 
 			voltas = piloto[i].volta
 			chegada = piloto[i].hora
@@ -61,13 +64,25 @@ const geraInfoPiloto = piloto => {
 const geraPodium = pilotos => {
 
 	//ordena os pilotos por ordem de chegada
-	pilotos.sort((a,b) => {
-		if (a.chegada < b.chegada)
-			return -1
-		if (a.chegada > b.chegada)
-			return 1
-		return 0
+	// pilotos.sort((a,b) => {
+	// 	if(a.voltas < b.voltas)
+	// 		return -1
+	// 	if(a.voltas > b.voltas)
+	// 		return 1
+	// 	return 0
+	// })
+
+	pilotos.sort(function (a, b) {
+		return b.voltas - a.voltas || Date.parse(`01/01/1999 ${a.chegada}`, 'dd/MM/yyyy hh:mm:ss.sss') - Date.parse(`01/01/1999 ${b.chegada}`, 'dd/MM/yyyy hh:mm:ss.sss')
 	})
+
+	// pilotos.sort((a,b) => {
+	// 	if (Date.parse(`01/01/1999 ${a.chegada}`, 'dd/MM/yyyy hh:mm:ss.sss') < Date.parse(`01/01/1999 ${b.chegada}`, 'dd/MM/yyyy hh:mm:ss.sss'))
+	// 		return -1
+	// 	if (Date.parse(`01/01/1999 ${a.chegada}`, 'dd/MM/yyyy hh:mm:ss.sss') > Date.parse(`01/01/1999 ${b.chegada}`, 'dd/MM/yyyy hh:mm:ss.sss'))
+	// 		return 1
+	// 	return 0
+	// })
 
 	//adiciona a informação da posição dos pilotos que estão ordenados e a distancia de cada um para o primeiro colocado
 	for(let i = 0; i < pilotos.length; i++){

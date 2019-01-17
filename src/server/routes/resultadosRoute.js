@@ -1,14 +1,15 @@
 const leituraArquivo = require('../application/commands/leituraArquivo')
+const classificaPilotos = require('../application/commands/classificaPilotos')
 
 module.exports = app => {
 
 	app.post('/resultados', async (req, res) => {
 
-		const arquivoFormatado = await leituraArquivo(req)
-		const pilotos = arquivoFormatado.pilotos
+		const arquivoFormatado = await leituraArquivo.realizaLeitura(req)
+		const pilotos = await classificaPilotos(arquivoFormatado.tabelaArquivo, arquivoFormatado.listaPilotos)
 		const melhorVolta = arquivoFormatado.melhorVolta
 		const msgErro = arquivoFormatado.erroArquivo
-		console.log('erro', msgErro)
+
 		res.status(200)
 		res.render('resultados', {
 			pilotos: pilotos,
