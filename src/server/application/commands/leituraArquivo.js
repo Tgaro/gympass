@@ -5,10 +5,9 @@ const trabalhaArquivo = require('./trabalhaArquivo')
 
 const realizaLeitura = async req => {
 	
-	//captura arquivos que foi feito upload no formulário
 	let leitura
 	let result
-
+	//captura arquivos que foi feito upload no formulário
 	result = await capturaArquivo(req)
 		.then(async result => {
 			return result
@@ -19,6 +18,7 @@ const realizaLeitura = async req => {
 	return leitura
 }
 
+//captura arquivos que foi feito upload no formulário
 const capturaArquivo = req => {
 
 	return new Promise((resolve, reject) => {

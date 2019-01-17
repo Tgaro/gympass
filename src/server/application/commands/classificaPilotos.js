@@ -63,26 +63,10 @@ const geraInfoPiloto = piloto => {
 
 const geraPodium = pilotos => {
 
-	//ordena os pilotos por ordem de chegada
-	// pilotos.sort((a,b) => {
-	// 	if(a.voltas < b.voltas)
-	// 		return -1
-	// 	if(a.voltas > b.voltas)
-	// 		return 1
-	// 	return 0
-	// })
-
+	//ordena pilotos pela ordem de chegada e voltas
 	pilotos.sort(function (a, b) {
 		return b.voltas - a.voltas || Date.parse(`01/01/1999 ${a.chegada}`, 'dd/MM/yyyy hh:mm:ss.sss') - Date.parse(`01/01/1999 ${b.chegada}`, 'dd/MM/yyyy hh:mm:ss.sss')
 	})
-
-	// pilotos.sort((a,b) => {
-	// 	if (Date.parse(`01/01/1999 ${a.chegada}`, 'dd/MM/yyyy hh:mm:ss.sss') < Date.parse(`01/01/1999 ${b.chegada}`, 'dd/MM/yyyy hh:mm:ss.sss'))
-	// 		return -1
-	// 	if (Date.parse(`01/01/1999 ${a.chegada}`, 'dd/MM/yyyy hh:mm:ss.sss') > Date.parse(`01/01/1999 ${b.chegada}`, 'dd/MM/yyyy hh:mm:ss.sss'))
-	// 		return 1
-	// 	return 0
-	// })
 
 	//adiciona a informação da posição dos pilotos que estão ordenados e a distancia de cada um para o primeiro colocado
 	for(let i = 0; i < pilotos.length; i++){
