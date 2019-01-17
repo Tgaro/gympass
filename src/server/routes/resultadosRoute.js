@@ -1,4 +1,4 @@
-const leituraArquivo = require('../utils/leituraArquivo')
+const leituraArquivo = require('../application/commands/leituraArquivo')
 
 module.exports = app => {
 
@@ -7,11 +7,19 @@ module.exports = app => {
 		const arquivoFormatado = await leituraArquivo(req)
 		const pilotos = arquivoFormatado.pilotos
 		const melhorVolta = arquivoFormatado.melhorVolta
-
+		const msgErro = arquivoFormatado.erroArquivo
+		console.log('erro', msgErro)
 		res.status(200)
 		res.render('resultados', {
 			pilotos: pilotos,
-			melhorVolta: melhorVolta
+			melhorVolta: melhorVolta,
+			msgErro: msgErro
 		})
+	})
+
+	app.get('/resultados', (req, res) => {
+
+		res.status(200)
+		res.redirect('/carregaArquivo')
 	})
 }

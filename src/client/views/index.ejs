@@ -9,25 +9,41 @@
 				<div class="col s12 m6 offset-m3">
 					<div class="card">
 						<div class="card-title center">
-							<span><h4>Faça upload do arquivo de log</h4></span>
+							<span><h4>Kart BI</h4></span>
 						</div>
-						<form action="resultados" method="post" enctype="multipart/form-data">
-							<div class="card-content">
-								<div class = "file-field input-field">
-									<div class = "btn">
-										<span>Procurar</span>
-										<input type="file" name="filetoupload" accept=".txt, .log"/>
-									</div>
-									<div class = "file-path-wrapper">
-										<input class = "file-path validate" type = "text" placeholder = "Escolha um arquivo" />
-									</div>
-								</div>
-							</div>
+						<div class="card-content">
+							<p class="flow-text" style="text-align: justify;">
+								O Kart BI é um produto que lê um arquivo texto (.txt, .log, .tsv) contendo informações de uma corrida.
+							</p>
+							<br>
+							<p class="flow-text" style="text-align: justify;">
+								O resultado do processamento do arquivo gera as seguintes informações:
+							</p>
+							<br>
+							<blockquote>
+								<span style="text-align: justify;">A melhor volta da corrida.</span>
+							</blockquote>
 
-							<div class="card-action center">
-								<button class="btn" type="submit">Enviar</button>
-							</div>
-						</form>
+							<blockquote>
+								<span style="text-align: justify;">A posição dos pilotos.</span>
+							</blockquote>
+
+							<blockquote>
+								<span style="text-align: justify;">A velocidade média de cada piloto.</span>
+							</blockquote>
+
+							<blockquote>
+								<span style="text-align: justify;">A melhor volta de cada piloto.</span>
+							</blockquote>
+
+							<blockquote>
+								<span style="text-align: justify;">A distância dos demais pilotos para o primeiro colocado.</span>
+							</blockquote>	
+							<br>
+							<p class="flow-text" style="text-align: justify;">
+								<a href="/carregaArquivo">Clique aqui</a> para realizar upload do seu arquivo.
+							</p>		
+						</div>			
 					</div>
 				</div>
 			</div>

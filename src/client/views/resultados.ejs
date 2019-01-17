@@ -17,6 +17,12 @@
 								<h6 style="text-align: center;"><span><i class="material-icons" style="vertical-align: bottom;">star</i></span> Melhor volta: <%= melhorVolta.tempo %> | Piloto - <%= melhorVolta.nomePiloto %></h6>
 							</div>
 							
+							<% if (msgErro != null && msgErro != '') { %>
+							<div class="row">
+								<h6 style="text-align: center;"><span><i class="material-icons" style="vertical-align: bottom;">report</i></span><%= msgErro %></h6>
+							</div>
+							<% } %> 
+
 							<!-- Percorre lista de pilotos -->
 							<ul class="collapsible">
 							<% pilotos.forEach(item => { %>

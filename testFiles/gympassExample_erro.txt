@@ -1,6 +1,6 @@
 Hora                               Piloto             Nº Volta   Tempo Volta       Velocidade média da volta
 23:49:08.277      038 – F.MASSA                           1		1:02.852                        44,275
-23:49:10.858      033 – R.BARRICHELLO                     1		1:04.352                        43,243
+ 033 – R.BARRICHELLO                     1		1:04.352                        43,243
 23:49:11.075      002 – K.RAIKKONEN                       1             1:04.108                        43,408
 23:49:12.667      023 – M.WEBBER                          1		1:04.414                        43,202
 23:49:30.976      015 – F.ALONSO                          1		1:18.456			35,47
