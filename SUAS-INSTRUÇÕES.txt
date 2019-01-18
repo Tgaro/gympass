@@ -2,6 +2,6 @@
 2) Foram gerados alguns arquivos para realizar testes na pasta ./testFiles.
 3) A coleta de informações em cada linha do arquivo foi feita utilizando expressões regulares. Caso algum dos campos esteja fora do formato padrão informado, a linha será descartada, podendo prejudicar a classificação.
 4) Os arquivos lidos são salvos em .\src\server\application\files\old.
-5) Caso haja empate entre dois pilotos não foi definido nenhum critério de desempate.
+5) Caso haja empate entre os pilotos o critério de desempate será a melhor volta do piloto
 
 Muito obrigado pela atenção!!

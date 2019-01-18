@@ -18,7 +18,6 @@ module.exports = linhas => {
 	let msgErro = ''
 
 	for (let i = 1; i < linhas.length; i++){
-
 		try{
 			//Através de expressões regulares, lê cada linha do arquivo e busca os valores no padrão definido
 			let volta = linhas[i].match(patterns.volta)[0].replace(patterns.repl, '').trim()
@@ -48,7 +47,8 @@ module.exports = linhas => {
 				melhorVolta.nomePiloto = nomePiloto
 				melhorVolta.volta = volta
 			}
-		}catch(e){
+		}
+		catch(e) {
 			msgErro += `Linha ${i+1} descartada por falha no formato. \n`
 			console.log(`Erro na linha ${i+1} do arquivo: ${e}`)
 		}

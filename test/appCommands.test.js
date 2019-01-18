@@ -80,7 +80,7 @@ describe('Valida funções da aplicação', () => {
 		info = await leituraArquivo.percorreArquivo(obj)
 		const resultado = await classificaPilotos(info.tabelaArquivo, info.listaPilotos)
 		expect(resultado.length).to.equal(5)
-		expect(resultado[0].codPiloto).to.satisfy((cod) => { return cod == '032' || cod == '038' })
+		expect(resultado[0].codPiloto).to.equal('032')
 		expect(resultado[4].codPiloto).to.equal('011')
 	})
 

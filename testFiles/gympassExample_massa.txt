@@ -1,0 +1,5 @@
+Hora	  Piloto	Nº Volta	Tempo Volta	Velocidade média da volta
+23:49:08.277	038 – F.MASSA	1	1:02.852	44,275
+23:50:11.447	038 – F.MASSA	2	1:03.170	44,053
+23:51:14.216	038 – F.MASSA	3	1:02.769	44,334
+23:52:17.003	038 – F.MASS	4	1:02.787	44,321
