@@ -4,5 +4,5 @@
 4) Os arquivos lidos são salvos em ./src/server/application/files/old.
 5) Caso haja empate entre os pilotos o critério de desempate será a melhor volta do piloto.
 6) Não alterar os arquivos na pasta ./testFiles, pois estes estão sendo utilizados no script de testes. A alteração deles irá resultar em um teste diferente do esperado
-
+7) A primeira linha do arquivo sempre será descartada sendo considerada cabeçalho do arquivo.
 Muito obrigado pela atenção!!
